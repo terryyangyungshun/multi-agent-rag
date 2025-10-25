@@ -75,7 +75,7 @@
 flowchart TD
 
 %% ========= PHASE 1: Document Analysis ========= %%
-subgraph P1[階段一：文件分析與 Chunks 結構化生成]
+subgraph P1[文件分析與結構化]
     A[輸入影像] --> B[document_classifier<br>文件分類]
     B --> C[image_extractor_agent<br>並行處理]
     C --> C1[text_extractor<br>OCR文字擷取]
@@ -86,34 +86,31 @@ subgraph P1[階段一：文件分析與 Chunks 結構化生成]
 end
 
 %% ========= PHASE 2: Vectorization ========= %%
-subgraph P2[階段二：FAISS 向量化與索引構建]
+subgraph P2[FAISS 向量化與索引]
     F --> G[data_loader_agent<br>資料載入]
     G --> H[vectorization_agent<br>FAISS向量化]
     H --> I[_FAISS_STORAGE<br>全域索引儲存]
 end
 
 %% ========= PHASE 3: Retrieval ========= %%
-subgraph P3[階段三：FAISS 檢索與來源追蹤]
+subgraph P3[FAISS 檢索與來源追蹤]
     I --> J[使用者查詢]
     J --> K[retrieval_agent<br>FAISS檢索]
     K --> L[retrieval_result<br>檢索結果（faiss_rank / similarity）]
 end
 
 %% ========= PHASE 4: Answer Generation ========= %%
-subgraph P4[階段四：基於向量檢索生成回答]
+subgraph P4[向量檢索生成回答]
     L --> M[answer_generation_agent<br>溯源回答生成]
     M --> N[最終回答<br>含溯源資訊與可信度]
 end
 
 %% ========= STYLES ========= %%
-style P1 fill:#f0f7ff,stroke:#90caf9,stroke-width:2px
-style P2 fill:#fff8e1,stroke:#ffb300,stroke-width:2px
-style P3 fill:#e8f5e9,stroke:#66bb6a,stroke-width:2px
-style P4 fill:#fce4ec,stroke:#f06292,stroke-width:2px
+style P1 fill:transparent,stroke:#90caf9,stroke-width:2px
+style P2 fill:transparent,stroke:#ffb300,stroke-width:2px
+style P3 fill:transparent,stroke:#66bb6a,stroke-width:2px
+style P4 fill:transparent,stroke:#f06292,stroke-width:2px
 
-style F fill:#e1f5ff
-style I fill:#fff4e1
-style N fill:#e8f5e9
 
 ```
 
