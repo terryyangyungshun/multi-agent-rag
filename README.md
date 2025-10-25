@@ -187,51 +187,51 @@ sequenceDiagram
 ### Step 1: 文件分類（document_classifier）
 
 - 分析輸入影像，判斷文件類型、語言、品質等。
-![文件分類結果](image.png)
+![文件分類結果](.\images\image.png)
 
 ---
 
 ### Step 2: 版面結構分析與OCR（layout_analyzer & text_extractor）
 
 - **layout_analyzer**：偵測表格、圖表、區塊，產生版面結構資訊。
-![版面結構分析](image-1.png)
+![版面結構分析](.\images\image-1.png)
 
 - **text_extractor**：執行OCR，擷取所有可見文字，標註位置與信心度。
-![OCR文字擷取](image-2.png)
+![OCR文字擷取](.\images\image-2.png)
 
 ---
 
 ### Step 3: 內容理解（content_analyzer）
 
 - 綜合分類、OCR、版面資訊，萃取關鍵資料、洞察與摘要。
-![內容理解與資料萃取](image-3.png)
+![內容理解與資料萃取](.\images\image-3.png)
 
 ---
 
 ### Step 4: RAG資料結構化（rag_data_organizer）
 
 - 整合所有分析結果，產生支援溯源的多模態RAG結構化資料（JSON）。
-![RAG結構化資料產出](image-4.png)
+![RAG結構化資料產出](.\images\image-4.png)
 
 ---
 
 ### Step 5: RAG資料載入與向量化（data_loader_agent & vectorization_agent）
 
 - **data_loader_agent**：載入RAG結構化資料，驗證內容。
-![RAG資料載入](image-5.png)
+![RAG資料載入](.\images\image-5.png)
 
 - **vectorization_agent**：將文字與洞察內容向量化，建立FAISS索引。
-![向量化與索引建立](image-6.png)
+![向量化與索引建立](.\images\image-6.png)
 
 ---
 
 ### Step 6: 檢索與回答生成（retrieval_agent & answer_generation_agent）
 
 - **retrieval_agent**：根據查詢執行FAISS多模態檢索，取得相關內容。
-![檢索結果](image-5.png)
+![檢索結果](.\images\image-5.png)
 
 - **answer_generation_agent**：根據檢索結果，生成帶有溯源資訊的最終回答。
-![溯源回答生成](image-6.png)
+![溯源回答生成](.\images\image-6.png)
 
 ---
 
@@ -276,7 +276,7 @@ adk web
 ```
 即可在本地啟動ADK Web介面。
 
-![alt text](image-7.png)
+![alt text](./images/image-7.png)
 
 ---
 
